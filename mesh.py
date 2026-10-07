@@ -51,21 +51,3 @@ class Mesh(object):
             self.rsph = np.sqrt(self.coords[0]**2 + self.coords[1]**2 + self.coords[2]**2) # spherical radius
             self.r = self.rsph
 
-    def velocity(self):                            # velocity from momentum and density
-        return self.M / self.D[None]
-
-    def pressure(self):                            # gas pressure
-        if self.isothermal: return self.cs**2*self.D
-        Ekin = self.M[0]**2
-        for i in range(1,self.ndim):
-            Ekin += self.M[i]**2
-        Ekin /= 2*self.D
-        return (self.gamma-1)*(self.E - Ekin)
-
-    def v_sound(self):                             # sound speed
-        if self.isothermal: return self.cs
-        return np.sqrt(self.gamma*self.pressure()/self.D)
-
-    def temperature(self):                         # temperature of gas per mu/kB
-        if self.isothermal: return self.cs**2
-        return self.pressure() / self.D
