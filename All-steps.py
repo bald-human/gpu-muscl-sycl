@@ -76,15 +76,6 @@ while m.t < tend and m.step < max_step:
 q_mgr.cpy_vars_from_device()
 q_mgr.free_arrays()
 
-# Final state report
-center_idx = tuple(np.array(m.n)//2)
-print(f"\nFinal state at center [{center_idx}]:")
-print(f"  Density:  {m.vars[0][center_idx]:8.4f}")
-print(f"  MomX:     {m.vars[1][center_idx]:8.4f}")
-print(f"  MomY:     {m.vars[2][center_idx]:8.4f}")
-print(f"  MomZ:     {m.vars[3][center_idx]:8.4f}")
-print(f"  Energy:   {m.vars[4][center_idx]:8.4f}")
-
 print(f"\nSimulation complete:")
 print(f"Total steps:     {m.step}")
 print(f"Final time:      {m.t:.4f}")
