@@ -6,7 +6,7 @@ Supervisor: Troels Haugbølle
 
 An existing Python/NumPy solver for the 3D compressible Euler equations was ported to C++ and then to **SYCL GPU kernels**. The kernels are exposed to Python through **pybind11**, so a simulation is still set up, run and analysed in Python while all the compute runs on the GPU.
 
-![Runtime per grid size](figures/runtime.png)
+<img width="745" height="443" alt="runtime_results" src="https://github.com/user-attachments/assets/d03425d5-630b-47d4-b73e-c105c6f70eb9" />
 
 ## Results
 
@@ -25,7 +25,7 @@ An existing Python/NumPy solver for the 3D compressible Euler equations was port
 - Kernel launches per time step reduced from **30 to 12**, and large device arrays from **19 to 8**.
 - HLL Riemann-solver kernel reduced from **1202 ns to 183 ns** (−84%) by kernel fusion.
 
-![Throughput by grid size](figures/throughput.png)
+<img width="749" height="446" alt="Throughput_results" src="https://github.com/user-attachments/assets/200bc070-47cf-4ab0-b5fa-bd5b754e28ce" />
 
 ## Numerical method
 
