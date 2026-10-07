@@ -10,7 +10,7 @@
 
 cd "$SLURM_SUBMIT_DIR"        # directory where you ran sbatch
 
-SRC_DIR="$SLURM_SUBMIT_DIR/version_1"
+SRC_DIR="$SLURM_SUBMIT_DIR"
 BUILD_DIR="$SRC_DIR/build"
 
 mkdir -p "$BUILD_DIR"
